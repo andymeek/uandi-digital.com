@@ -13,14 +13,14 @@ module.exports = function (grunt) {
 					transform: ['reactify']
 				},
 				files: {
-					'public/js/main.js': 'app/assets/js/main.js'
+                    'public/assets/js/main.js': 'app/assets/js/main.js'
 				}
 			}
 		},
 		uglify: {
 			my_target: {
 				files: {
-					'public/js/main-min.js': ['app/assets/js/main.js']
+					'public/assets/js/main-min.js': ['app/assets/js/main.js']
 				}
 			}
 		},
@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'public/css/main.css': 'app/assets/css/main.scss'
+					'public/assets/css/main.css': 'app/assets/css/main.scss'
 				}
 			}
 		},
@@ -45,11 +45,11 @@ module.exports = function (grunt) {
 			target: {
 				files: [{
 					expand: true,
-					cwd: 'public/css/',
+					cwd: 'public/assets/css/',
 					src: [
 						'main.css'
 					],
-					dest: 'public/css/',
+					dest: 'public/assets/css/',
 					ext: '-min.css'
 				}]
 			}
