@@ -1,0 +1,464 @@
+/*
+// +--------------------------------------------------------------------------------------------------------+
+// | Main Styles                                                                                                                                                                                                                                                                                                                                                                        |
+// +--------------------------------------------------------------------------------------------------------+
+*/
+@import "_core-includes";
+
+html { @include tapHighlight();
+  body { @include font(); font-size:#{$body-base-pixels}px; color:#{$colour-copy};} 
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 { margin:0; }
+h1 { 
+ @include font-size($h1-pixels); color:#{$colour-green};  
+}
+h2 { 
+ @include font-size($h2-pixels); color:#{$colour-orange}; font-weight:normal;
+}
+h3 { 
+ @include font-size($h3-pixels);
+}
+h4 { 
+ @include font-size($h4-pixels);
+}
+
+/*General links*/
+a {
+  text-decoration:none;
+  color:#{$link-colour};
+  &:hover {
+	  color:#{$link-hover-colour};
+  }
+}
+
+/* Generic HR */
+hr {
+	height:emCalc(1);
+	background:red;
+	border:0;
+	width:100%;
+	margin:emCalc(20) 0;
+	position:relative;
+	@include clearfix();
+	display:inline-block;
+}
+
+/* Inline Quotes */
+q {quotes: '\201C' '\201D' '\2018' '\2019';} 
+q:before {content: open-quote;}
+q:after {content: close-quote;}
+
+/* Lists ordered and unordered */
+ul, ol { 
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+/* Header */
+header, .bottom-background {
+	width:100%;
+	background:url(#{$core-image-path}site/bg-header-small.png) #fff top repeat-x;
+	background-size:contain;
+	@include min-height(100);
+}
+header {
+	position:absolute;
+	top:0;
+	z-index:2;
+}
+.bottom-background { position:fixed; bottom:0; @include rotate(180); background-position:bottom;}
+
+a.logo {
+	background:url(../images/site/uandi-digital-200px-200px.png) no-repeat;
+	z-index:2;
+	display:block;
+	position:relative;
+}
+
+.container {
+	@include box-sizing();
+	@include clearfix();
+	margin:0 auto;
+	position:relative;
+	top:100px;
+	z-index:1;
+	background:white;
+	padding:0 emCalc(10) emCalc(160) emCalc(10);
+	h1 {
+		margin-bottom:emCalc(2)
+	}
+	h2, h3 {
+		margin-bottom:emCalc(10)
+	}
+	p, ul, ol {
+		line-height:1.5em;
+	}
+	ol {
+		li {
+			margin-bottom:emCalc(10);
+			ol {  
+				margin:0 0 0 emCalc(20);
+				li {
+					margin-top:emCalc(10);
+				}
+			}
+			&:before {
+				content: "• ";
+				color: #{$colour-green};
+			}
+		}
+	}
+}
+/***************************
+| Home page			   	   |
+/**************************/
+.home {
+	h3 {
+		margin-top:emCalc(40);
+		@include font-size(16);
+	}
+}
+/***************************
+| Services page			   |
+/**************************/
+.services {
+	.container {
+		section, aside {
+			@include box-sizing();
+		}
+	}
+}
+/***************************
+| Recent builds page	   |
+/**************************/
+.recent-builds {
+	.container {
+		#builds-container {
+			margin-top:emCalc(40);
+			a { 
+				display:inline-block;
+				margin-right:emCalc(10);
+				&:hover img {
+				  @include opacity(.7);	
+				}
+			}
+		}
+	}
+}
+/* Footer */
+footer {	
+	nav { 
+		position:fixed; 
+		width:100%; 
+		bottom:0;
+		z-index:3;
+		@include opacity(.95);
+		background:#1B4240;
+		text-align:center;
+		text-align: left;
+		font-size: 0; // Combat the extra inline-block spacing on the <li> tags
+		ul {
+			text-align:center;
+			li {
+				display:inline-block;
+				width:25%;
+				overflow:hidden;
+				@include font-size(8);
+				a {
+					display:block;
+					color:#fff;		
+					padding:emCalc(20) emCalc(5) emCalc(20) emCalc(5);
+					&:hover {
+						color:#{$colour-nav-active};
+					}
+				}
+				[class^="icon-"]:before, [class*=" icon-"]:before {
+					font-size:30px;
+				}
+				
+			}
+		}
+	}
+}
+/* Active nav links */
+.home {
+	footer nav ul li a.icon-about { color:#{$colour-nav-active}; }
+}
+.services {
+	footer nav ul li a.icon-monitor { color:#{$colour-nav-active}; }
+}
+.recent-builds {
+	footer nav ul li a.icon-spanner { color:#{$colour-nav-active}; }
+}
+.contact {
+	footer nav ul li a.icon-contact { color:#{$colour-nav-active}; }
+}
+
+/* Social Icons */
+.social-icons-container {
+	font-family:#{$font-icon};
+	display:inline-block;
+	a {
+		@include font-size(45);
+		margin-right:emCalc(10);
+		&.icon-github {
+			margin-right:0;
+		}
+	}
+}
+
+/* Max width */
+@media (#{$small}) {
+	/* Hides */
+	.arrows { display:none; }
+	
+	h1 { 
+	 @include font-size(34);  
+	}
+	h2 { 
+	 @include font-size(18);
+	}
+	
+	a.logo {
+		display:block;
+		position:absolute;
+		top:1em;
+		right:1em;
+		width:100px;
+		height:100px;
+		background-size:100% 100%;
+	}
+
+	/* Footer */
+	footer {	
+		nav { 		
+			ul {
+				li {
+					@include font-size(8);
+					a {
+						span {
+							margin-top:emCalc(5);
+							display:block;
+						}
+					}
+				}
+			}
+		}
+	}
+	/***************************
+	| Services page			   |
+	/**************************/
+	.services {
+		.container {
+			section {
+				&.technologies {
+					background:#{$colour-green};
+					color:#fff;
+					li:before {
+						color:#000;
+					}
+				}
+			}
+			aside {
+				section {
+					padding:emCalc(10);
+					&.popular-services {
+						h3 {
+							color:#{$colour-green}
+						}
+					}
+				}
+			}
+		}
+	}
+	/***************************
+	| Recent builds page		|
+	/**************************/
+	.recent-builds {
+		.container {
+			#builds-container {
+				text-align:center;
+				a { 
+					margin-bottom:emCalc(10);
+				}
+			}
+		}
+	}
+	/***************************
+	| Contact page			   |
+	/**************************/
+	.contact {
+		a.logo {
+			background:url(#{$core-image-path}site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
+			background-size:contain;
+		}
+	}
+	
+} /* End small media query */
+        
+/* Used to alter styles for medium sized screens. */
+@media (#{$medium}) {
+	
+	a.logo {
+		top: emCalc(65);
+		width:200px;
+		height:200px;
+		text-align:center;
+		margin:0 auto;
+	}
+	
+	.arrows {  
+		font-family:#{$font-icon};
+		position:absolute;
+		@include font-size(40);
+		top:emCalc(55);
+		color:#50C1BC;
+		display:none;
+		&:hover {
+			color:#{$colour-orange};
+		}
+	}
+	.icon-left-arrow-1 {
+		left:-50px;
+	}
+	.icon-right-arrow-1 {
+		right:-50px;
+	}
+	
+	.container {
+		max-width:80%;
+	}
+	
+	/* Footer */
+	footer {	
+		nav { 		
+			ul {
+				li {
+					@include font-size(16);
+					a {
+						&:before,
+						span {
+							display:inline-block;
+						}
+						span {
+							position:relative;
+							top:-7px;
+							margin:0 0 0 emCalc(10);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/**************************
+	| Home page				  |
+	/*************************/
+	.home {
+		.container {
+			/*max-width:emCalc(640);
+			padding:0 emCalc(40) emCalc(160) emCalc(40);*/
+		}
+	}
+	/***************************
+	| Services page			   |
+	/**************************/
+	.services {
+		a.logo {
+		    width: 80%;
+		 	text-align:left;
+		}
+		.container {
+			> section {
+				float:left;
+				width:60%;
+			}
+			aside {
+				float:right;
+				width:40%;
+				padding-left:emCalc(40);
+				margin-top:-61px;
+			}
+		}
+	}
+	/***************************
+	| Contact page			   |
+	/**************************/
+	.contact {
+		a.logo {
+		    width:380px;
+			height:380px;
+			margin:0 auto;
+		    background:url(../images/site/uandi-digital-andymeek.png) no-repeat;
+			background-size:contain;
+		}
+		.container {
+			
+		}
+	}
+	
+
+
+} /* End medium media query */
+        
+/* Used to alter styles for large sized screens. */
+@media (#{$large}) {
+	
+	a.logo,
+	.container {
+		float:left;
+	}
+	
+	a.logo {
+		background-size:150px 150px;
+		background-position:right top;
+		/*background:red;*/
+		top: emCalc(105);
+	}
+	
+	.container {
+		/*background:yellow;*/
+		top: emCalc(120);
+		padding-left:emCalc(40);
+	}
+	
+	/**************************
+	| Home page				  |
+	/*************************/
+	.home {
+		a.logo {
+			width: 40%;
+			height:331px;
+			background:url(../images/site/uandi-digital-331px-331px.png) no-repeat right;
+		}
+		.container {
+			width:60%;
+		}
+	}
+	/***************************
+	| Services page			   |
+	/**************************/
+	.services,
+	.contact {
+		a.logo {
+			width:30%;
+		}
+		.container {
+			width:70%;
+			
+		}
+	}
+	/***************************
+	| Contact page			   |
+	/**************************/
+	.contact {
+		a.logo {
+			background-position:right top;
+			background-size: 280px;
+		}
+	}
+
+} /* End large media query */

@@ -1,0 +1,946 @@
+@charset "UTF-8";
+/*
+// +--------------------------------------------------------------------------------------------------------+
+// | Main Styles                                                                                                                                                                                                                                                                                                                                                                        |
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Core imports								 																																																																																		|
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | EM Calculator function																			 																																																													|
+// | Function to convert pixels into EMs 																																																																																			|  
+// | Usage:
+
+						.article-heading {
+								font-size: emCalc(700);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Breakpoint Mixin																																																																																					 	|
+// | Shortcut for outputting the media query breakpoints																																																				|  
+// | @param point (string)																																																																																		|
+// | @return content (string)																																																																															|
+// | Usage:
+
+						.page-wrap {
+								width: 75%;
+								@include breakpoint(large) { width: 60%; }
+								@include breakpoint(medium) { width: 80%; }
+								@include breakpoint(small) { width: 95%; }
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Clearfix																																																																																					 									|
+// | Shortcut for clearfix																																																																																		|  
+// | @return content (string)																																																																															|
+// | Usage:
+
+						.article {
+											@include clearfix();
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Box Sizing with IE fallback																																																																												|  
+// | @param width (string)	- CSS property	 																																																																	|
+// | @param padding (string)	- CSS property	 																																																															|
+// | Usage:																																																																																																	|
+
+						section {
+								background: white;
+								@include box(50, 3);
+								margin: 0 auto;
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Box Sizing																																																																																					 							|
+// | Shortcut for clearfix																																																																																		|  
+// | @param box-model (string)	- CSS property	 																																																													|
+// | Usage:
+
+						*,
+						*:after,
+						*:before {
+								@include box-sizing(border-box);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Border radius													 																																																																		 									|
+// | Shortcut for border radius	 																																																																											|  
+// | @return content (string)																																																																															|
+// | Usage:
+
+						.button {
+								@include border-radius(5px);
+						}
+
+						.submit-button {
+								@include border-top-radius(10px);
+								@include border-right-radius(8px);
+								@include border-bottom-radius(10px);
+								@include border-left-radius (6px);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Opacity																			 																																																																		 									|
+// | Shortcut for opacity																																																																																			|  
+// | Usage:
+
+						.article-heading {
+								@include opacity(0.8);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Text truncate - 																			 																																																																		 |
+// | Shortcut for text truncate																																																																													|
+// |	An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block. 						|  
+// | Usage:
+
+						.text-truncate {
+								@include text-truncate;
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Font size						 																			 																																																																		 |
+// | Shortcut to output rem font-size with px fallback  																																																				|
+// | Usage:
+
+						body {
+								@include font-size(16);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Center Block				 																			 																																																																		|
+// | Center block elements  																																																																																|
+// | Usage:
+
+						img {
+								@include center-block;
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Indent				 																			 																																																																								|
+// | Indents text  																																																																																									|
+// | Usage:
+
+						img {
+								@include center-block;
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Min Height																																																																																					 							|
+// | Shortcut for min-height																																																																																| 
+// | @param pixels (Int)
+// | @return content (string)																																																																															|
+// | Usage:
+
+						.article {
+											@include min-height();
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Min Width																																																																																					 							|
+// | Shortcut for min-width																																																																																| 
+// | @param pixels (Int)
+// | @return content (string)																																																																															|
+// | Usage:
+
+						.article {
+											@include min-height();
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Transition																																																																																					 							|
+// | Shortcut for transitions																																																																															| 
+// | @param transition-property (String)																																																																				|
+// | @param transition-time (String)																																																																								|
+// | @param method (String)																																																																																	|
+// | @return content (string)																																																																															|
+// | Usage:
+
+						button {
+											@include transition(background-color, 0.5s, ease);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Gradient																																																																																					 							  |
+// | Shortcut for transitions																																																																															| 
+// | @param from (String)																																																																																	  |
+// | @param to (String)																																																																																					|
+// | @param height (String)																																																																																	|
+// | @return content (string)																																																																															|
+// | Usage:
+
+						.gradient {
+						    @include gradient(red, white, 100%);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Rotate																																																																																					 											|
+// | Shortcut for rotating																																																																																		| 
+// | @param degrees (Int)																																																																																			|
+// | Usage:
+
+						div {
+											@include rotate(90);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Translate 3D																																																																																					 					|
+// | Shortcut for rotating																																																																																		| 
+// | @param x (Int) - Pixels																																																																																|
+// | @param y (Int) - Pixels																																																																																|
+// | @param z (Int) - Pixels																																																																																|
+// | Usage:
+
+						div {
+											@include translate3d(10, 20, 30);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Backface Visibility																																																																														 					|
+// | Shortcut for rotating																																																																																		| 
+// | @param value (String) - Optional / Default: visible																																																				|
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Font Montserrate																																																																																					 	|
+// | Shortcut for transitions																																																																															| 
+// | @param weight (String) - Optional																																																																						|
+// | Usage:
+
+						button {
+											@include transition(background-color, 0.5s, ease);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Tap Highlight																																																																																					 				|
+// | Shortcut for the tap highlight color																																																																			| 
+// | @param color (String) - Optional	/ default: black																																																						|
+// | Usage:
+
+						button {
+											@include tapHighlight(red);
+						}
+
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Config Variables																																																																																							|
+// +--------------------------------------------------------------------------------------------------------+
+*/
+/*
+// Main body font size
+// All em measurements should be worked out from this value, for example, if you want to convert 20px into an em, the calculation is
+// 20 / 16 = 1.25
+*/
+/*
+// Off canvas menu width
+*/
+/*  
+// Font Icon
+*/
+/*
+// Heading font sizes in pixels
+*/
+/*
+// Copy - normal in pixels
+*/
+/*
+// Dir Paths
+*/
+/*
+- Assets Dir:
+*/
+/*
+- Images:
+*/
+/*
+- CSS:
+*/
+/*
+- JS:
+*/
+/*
+- Fonts:
+*/
+/*
+// Colors - hex
+*/
+/*
+// Loading spinner path
+*/
+/*
+// Header height
+*/
+/* 
+// Breakpoint variables 
+// These are the responsive breakpoint values - uses the emCalc function, which works out the em values based on the pixel param.
+*/
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Utils								 																																																																																									|
+// | Used for re-usage and generic styles								 																																																										|
+// +--------------------------------------------------------------------------------------------------------+
+*/
+.max-width {
+  max-width: 100%; }
+
+.clear-fix,
+.clearfix {
+  *zoom: 1; }
+
+.clear-fix:before, .clear-fix:after,
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
+
+.clear-fix:after,
+.clearfix:after {
+  clear: both; }
+
+.no-flicker {
+  -webkit-transform: translate3d(0, 0, 0); }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.relative {
+  position: relative; }
+  .relative {
+    *zoom: 1; }
+  .relative:before, .relative:after {
+    content: "";
+    display: table; }
+  .relative:after {
+    clear: both; }
+
+.f-left {
+  float: left; }
+
+.f-right {
+  float: right; }
+
+/*
+// +--------------------------------------------------------------------------------------------------------+  
+// | Fonts								 																																																																																									|
+// +--------------------------------------------------------------------------------------------------------+
+*/
+.montserrat, .montserrat-bold {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always; }
+
+.montserrat-bold {
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always; }
+
+@font-face {
+  font-family: "uandi-digital";
+  src: url("fonts/uandi-digital.eot");
+  src: url("fonts/uandi-digital.eot?#iefix") format("embedded-opentype"), url("fonts/uandi-digital.ttf") format("truetype"), url("fonts/uandi-digital.svg#uandi-digital") format("svg"), url("fonts/uandi-digital.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+[data-icon]:before {
+  font-family: "uandi-digital" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "uandi-digital" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-male:before {
+  content: "a"; }
+
+.icon-about:before {
+  content: "b"; }
+
+.icon-monitor:before {
+  content: "c"; }
+
+.icon-linkedin:before {
+  content: "e"; }
+
+.icon-left-arrow:before {
+  content: "f"; }
+
+.icon-facebook:before {
+  content: "g"; }
+
+.icon-right-arrow:before {
+  content: "h"; }
+
+.icon-github:before {
+  content: "i"; }
+
+.icon-loading:before {
+  content: "j"; }
+
+.icon-github-1:before {
+  content: "k"; }
+
+.icon-draw:before {
+  content: "l"; }
+
+.icon-smartphone:before {
+  content: "m"; }
+
+.icon-contact:before {
+  content: "n"; }
+
+.icon-twitter-bird:before {
+  content: "d"; }
+
+.icon-spanner:before {
+  content: "o"; }
+
+.icon-menu:before {
+  content: "p"; }
+
+.icon-linkedin-1:before {
+  content: "q"; }
+
+.icon-right-arrow-1:before {
+  content: "r"; }
+
+.icon-left-arrow-1:before {
+  content: "s"; }
+
+.icon-cross:before {
+  content: "t"; }
+
+.icon-skype:before {
+  content: "u"; }
+
+.icon-checked:before {
+  content: "v"; }
+
+.icon-up-arrow:before {
+  content: "w"; }
+
+.icon-plus:before {
+  content: "x"; }
+
+.icon-quote-left:before {
+  content: "y"; }
+
+.icon-arrows:before {
+  content: "z"; }
+
+.icon-facebook-1:before {
+  content: "A"; }
+
+.icon-laptop:before {
+  content: "B"; }
+
+.icon-uandi-digital-digital:before {
+  content: "C"; }
+
+.icon-email:before {
+  content: "D"; }
+
+.icon-close:before {
+  content: "E"; }
+
+.icon-android:before {
+  content: "F"; }
+
+.icon-arrow-down:before {
+  content: "G"; }
+
+.icon-plus-1:before {
+  content: "H"; }
+
+.icon-circle:before {
+  content: "I"; }
+
+.icon-contact-1:before {
+  content: "J"; }
+
+.icon-apple:before {
+  content: "K"; }
+
+/* Social icons */
+.icon-facebook:hover,
+.icon-facebook:active {
+  color: rgba(59, 89, 152, 0.7); }
+
+.icon-twitter:hover,
+.icon-twitter:active {
+  color: rgba(0, 172, 237, 0.7); }
+
+.icon-google-plus:hover,
+.icon-google-plus:active {
+  color: rgba(172, 0, 0, 0.7); }
+
+.icon-youtube:hover,
+.icon-youtube:active {
+  color: rgba(167, 41, 36, 0.7); }
+
+.icon-pinterest:hover,
+.icon-pinterest:active {
+  color: rgba(204, 33, 38, 0.7); }
+
+.icon-instagram:hover,
+.icon-instagram:active {
+  color: rgba(71, 117, 155, 0.7); }
+
+.icon-mobile-3:hover,
+.icon-mobile-3:active {
+  color: black; }
+
+html {
+  -webkit-tap-highlight-color: transparent; }
+  html body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: "normal";
+    font-size: 16px;
+    color: #333; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+h1 {
+  font-size: 49px;
+  font-size: 3.0625rem;
+  color: #50C0BB; }
+
+h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  color: #F3574D;
+  font-weight: normal; }
+
+h3 {
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 20px;
+  font-size: 1.25rem; }
+
+/*General links*/
+a {
+  text-decoration: none;
+  color: #51BFBA; }
+  a:hover {
+    color: #F3574D; }
+
+/* Generic HR */
+hr {
+  height: 0.0625em;
+  background: red;
+  border: 0;
+  width: 100%;
+  margin: 1.25em 0;
+  position: relative;
+  display: inline-block; }
+  hr {
+    *zoom: 1; }
+  hr:before, hr:after {
+    content: "";
+    display: table; }
+  hr:after {
+    clear: both; }
+
+/* Inline Quotes */
+q {
+  quotes: '\201C' '\201D' '\2018' '\2019'; }
+
+q:before {
+  content: open-quote; }
+
+q:after {
+  content: close-quote; }
+
+/* Lists ordered and unordered */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/* Header */
+header, .bottom-background {
+  width: 100%;
+  background: url(../images/site/bg-header-small.png) #fff top repeat-x;
+  background-size: contain;
+  min-height: 6.25em;
+  height: auto !important;
+  height: 6.25em; }
+
+header {
+  position: absolute;
+  top: 0;
+  z-index: 2; }
+
+.bottom-background {
+  position: fixed;
+  bottom: 0;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  background-position: bottom; }
+
+a.logo {
+  background: url(../images/site/uandi-digital-200px-200px.png) no-repeat;
+  z-index: 2;
+  display: block;
+  position: relative; }
+
+.container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+  z-index: 1;
+  background: white;
+  padding: 0 0.625em 10em 0.625em; }
+  .container {
+    *zoom: 1; }
+  .container:before, .container:after {
+    content: "";
+    display: table; }
+  .container:after {
+    clear: both; }
+  .container h1 {
+    margin-bottom: 0.125em; }
+  .container h2, .container h3 {
+    margin-bottom: 0.625em; }
+  .container p, .container ul, .container ol {
+    line-height: 1.5em; }
+  .container ol li {
+    margin-bottom: 0.625em; }
+    .container ol li ol {
+      margin: 0 0 0 1.25em; }
+      .container ol li ol li {
+        margin-top: 0.625em; }
+    .container ol li:before {
+      content: "• ";
+      color: #50C0BB; }
+
+/***************************
+| Home page			   	   |
+/**************************/
+.home h3 {
+  margin-top: 2.5em;
+  font-size: 16px;
+  font-size: 1rem; }
+
+/***************************
+| Services page			   |
+/**************************/
+.services .container section, .services .container aside {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/***************************
+| Recent builds page	   |
+/**************************/
+.recent-builds .container #builds-container {
+  margin-top: 2.5em; }
+  .recent-builds .container #builds-container a {
+    display: inline-block;
+    margin-right: 0.625em; }
+    .recent-builds .container #builds-container a:hover img {
+      opacity: 0.7;
+      filter: alpha(opacity=70); }
+
+/* Footer */
+footer nav {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 3;
+  opacity: 0.95;
+  filter: alpha(opacity=95);
+  background: #1B4240;
+  text-align: center;
+  text-align: left;
+  font-size: 0; }
+  footer nav ul {
+    text-align: center; }
+    footer nav ul li {
+      display: inline-block;
+      width: 25%;
+      overflow: hidden;
+      font-size: 8px;
+      font-size: 0.5rem; }
+      footer nav ul li a {
+        display: block;
+        color: #fff;
+        padding: 1.25em 0.3125em 1.25em 0.3125em; }
+        footer nav ul li a:hover {
+          color: #F4574E; }
+      footer nav ul li [class^="icon-"]:before, footer nav ul li [class*=" icon-"]:before {
+        font-size: 30px; }
+
+/* Active nav links */
+.home footer nav ul li a.icon-about {
+  color: #F4574E; }
+
+.services footer nav ul li a.icon-monitor {
+  color: #F4574E; }
+
+.recent-builds footer nav ul li a.icon-spanner {
+  color: #F4574E; }
+
+.contact footer nav ul li a.icon-contact {
+  color: #F4574E; }
+
+/* Social Icons */
+.social-icons-container {
+  font-family: uandi-digital;
+  display: inline-block; }
+  .social-icons-container a {
+    font-size: 45px;
+    font-size: 2.8125rem;
+    margin-right: 0.625em; }
+    .social-icons-container a.icon-github {
+      margin-right: 0; }
+
+/* Max width */
+@media ('only screen and (max-width:"43.75em")') {
+  /* Hides */
+  .arrows {
+    display: none; }
+  h1 {
+    font-size: 34px;
+    font-size: 2.125rem; }
+  h2 {
+    font-size: 18px;
+    font-size: 1.125rem; }
+  a.logo {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%; }
+  /* Footer */
+  footer nav ul li {
+    font-size: 8px;
+    font-size: 0.5rem; }
+    footer nav ul li a span {
+      margin-top: 0.3125em;
+      display: block; }
+  /***************************
+	| Services page			   |
+	/**************************/
+  .services .container section.technologies {
+    background: #50C0BB;
+    color: #fff; }
+    .services .container section.technologies li:before {
+      color: #000; }
+  .services .container aside section {
+    padding: 0.625em; }
+    .services .container aside section.popular-services h3 {
+      color: #50C0BB; }
+  /***************************
+	| Recent builds page		|
+	/**************************/
+  .recent-builds .container #builds-container {
+    text-align: center; }
+    .recent-builds .container #builds-container a {
+      margin-bottom: 0.625em; }
+  /***************************
+	| Contact page			   |
+	/**************************/
+  .contact a.logo {
+    background: url(../images/site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
+    background-size: contain; } }
+
+/* End small media query */
+/* Used to alter styles for medium sized screens. */
+@media ('only screen and (min-width:"43.8125em")') {
+  a.logo {
+    top: 4.0625em;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto; }
+  .arrows {
+    font-family: uandi-digital;
+    position: absolute;
+    font-size: 40px;
+    font-size: 2.5rem;
+    top: 3.4375em;
+    color: #50C1BC;
+    display: none; }
+    .arrows:hover {
+      color: #F3574D; }
+  .icon-left-arrow-1 {
+    left: -50px; }
+  .icon-right-arrow-1 {
+    right: -50px; }
+  .container {
+    max-width: 80%; }
+  /* Footer */
+  footer nav ul li {
+    font-size: 16px;
+    font-size: 1rem; }
+    footer nav ul li a:before,
+    footer nav ul li a span {
+      display: inline-block; }
+    footer nav ul li a span {
+      position: relative;
+      top: -7px;
+      margin: 0 0 0 0.625em; }
+  /**************************
+	| Home page				  |
+	/*************************/
+  .home .container {
+    /*max-width:emCalc(640);
+			padding:0 emCalc(40) emCalc(160) emCalc(40);*/ }
+  /***************************
+	| Services page			   |
+	/**************************/
+  .services a.logo {
+    width: 80%;
+    text-align: left; }
+  .services .container > section {
+    float: left;
+    width: 60%; }
+  .services .container aside {
+    float: right;
+    width: 40%;
+    padding-left: 2.5em;
+    margin-top: -61px; }
+  /***************************
+	| Contact page			   |
+	/**************************/
+  .contact a.logo {
+    width: 380px;
+    height: 380px;
+    margin: 0 auto;
+    background: url(../images/site/uandi-digital-andymeek.png) no-repeat;
+    background-size: contain; } }
+
+/* End medium media query */
+/* Used to alter styles for large sized screens. */
+@media ('only screen and (min-width:"61em")') {
+  a.logo,
+  .container {
+    float: left; }
+  a.logo {
+    background-size: 150px 150px;
+    background-position: right top;
+    /*background:red;*/
+    top: 6.5625em; }
+  .container {
+    /*background:yellow;*/
+    top: 7.5em;
+    padding-left: 2.5em; }
+  /**************************
+	| Home page				  |
+	/*************************/
+  .home a.logo {
+    width: 40%;
+    height: 331px;
+    background: url(../images/site/uandi-digital-331px-331px.png) no-repeat right; }
+  .home .container {
+    width: 60%; }
+  /***************************
+	| Services page			   |
+	/**************************/
+  .services a.logo,
+  .contact a.logo {
+    width: 30%; }
+  .services .container,
+  .contact .container {
+    width: 70%; }
+  /***************************
+	| Contact page			   |
+	/**************************/
+  .contact a.logo {
+    background-position: right top;
+    background-size: 280px; } }
+
+/* End large media query */
+
+/*# sourceMappingURL=main.css.map */
