@@ -1,8 +1,7 @@
 var express = require('express'),
 	path = require('path'),
 	app = express(),
-	port = 4444,
-	bodyParser = require('body-parser');
+	port = __dirname === '/Users/andrewmeek/node/www/uandi-digital' ? 4444 : 80;
 
 // Make sure to include the JSX transpiler
 require('node-jsx').install();

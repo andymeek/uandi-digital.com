@@ -568,6 +568,11 @@
 .icon-mobile-3:active {
   color: black; }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html {
   -webkit-tap-highlight-color: transparent; }
   html body {
@@ -577,7 +582,12 @@ html {
     color: #333; }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0; }
 
 h1 {
@@ -634,15 +644,17 @@ q:after {
   content: close-quote; }
 
 /* Lists ordered and unordered */
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none; }
 
 /* Header */
-header, .bottom-background {
+header,
+.bottom-background {
   width: 100%;
-  background: url(../images/site/bg-header-small.png) #fff top repeat-x;
+  background: url(/assets/images/site/bg-header-small.png) #fff top repeat-x;
   background-size: contain;
   min-height: 6.25em;
   height: auto !important;
@@ -664,15 +676,12 @@ header {
   background-position: bottom; }
 
 a.logo {
-  background: url(../images/site/uandi-digital-200px-200px.png) no-repeat;
+  background: url(/assets/images//site/uandi-digital-200px-200px.png) no-repeat;
   z-index: 2;
   display: block;
   position: relative; }
 
 .container {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   margin: 0 auto;
   position: relative;
   top: 100px;
@@ -688,9 +697,12 @@ a.logo {
     clear: both; }
   .container h1 {
     margin-bottom: 0.125em; }
-  .container h2, .container h3 {
+  .container h2,
+  .container h3 {
     margin-bottom: 0.625em; }
-  .container p, .container ul, .container ol {
+  .container p,
+  .container ul,
+  .container ol {
     line-height: 1.5em; }
   .container ol li {
     margin-bottom: 0.625em; }
@@ -703,7 +715,7 @@ a.logo {
       color: #50C0BB; }
 
 /***************************
-| Home page			   	   |
+| Home page                |
 /**************************/
 .home h3 {
   margin-top: 2.5em;
@@ -711,15 +723,7 @@ a.logo {
   font-size: 1rem; }
 
 /***************************
-| Services page			   |
-/**************************/
-.services .container section, .services .container aside {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-/***************************
-| Recent builds page	   |
+| Recent builds page       |
 /**************************/
 .recent-builds .container #builds-container {
   margin-top: 2.5em; }
@@ -756,7 +760,8 @@ footer nav {
         padding: 1.25em 0.3125em 1.25em 0.3125em; }
         footer nav ul li a:hover {
           color: #F4574E; }
-      footer nav ul li [class^="icon-"]:before, footer nav ul li [class*=" icon-"]:before {
+      footer nav ul li [class^="icon-"]:before,
+      footer nav ul li [class*=" icon-"]:before {
         font-size: 30px; }
 
 /* Active nav links */
@@ -784,7 +789,7 @@ footer nav {
       margin-right: 0; }
 
 /* Max width */
-@media ('only screen and (max-width:"43.75em")') {
+@media only screen and (max-width: 43.75em) {
   /* Hides */
   .arrows {
     display: none; }
@@ -810,34 +815,27 @@ footer nav {
       margin-top: 0.3125em;
       display: block; }
   /***************************
-	| Services page			   |
-	/**************************/
-  .services .container section.technologies {
-    background: #50C0BB;
-    color: #fff; }
-    .services .container section.technologies li:before {
-      color: #000; }
+    | Services page            |
+    /**************************/
   .services .container aside section {
     padding: 0.625em; }
-    .services .container aside section.popular-services h3 {
-      color: #50C0BB; }
   /***************************
-	| Recent builds page		|
-	/**************************/
+    | Recent builds page        |
+    /**************************/
   .recent-builds .container #builds-container {
     text-align: center; }
     .recent-builds .container #builds-container a {
       margin-bottom: 0.625em; }
   /***************************
-	| Contact page			   |
-	/**************************/
+    | Contact page             |
+    /**************************/
   .contact a.logo {
-    background: url(../images/site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
+    background: url(/assets/images/site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
     background-size: contain; } }
 
 /* End small media query */
 /* Used to alter styles for medium sized screens. */
-@media ('only screen and (min-width:"43.8125em")') {
+@media only screen and (min-width: 43.8125em) {
   a.logo {
     top: 4.0625em;
     width: 200px;
@@ -872,14 +870,14 @@ footer nav {
       top: -7px;
       margin: 0 0 0 0.625em; }
   /**************************
-	| Home page				  |
-	/*************************/
+    | Home page               |
+    /*************************/
   .home .container {
     /*max-width:emCalc(640);
-			padding:0 emCalc(40) emCalc(160) emCalc(40);*/ }
+            padding:0 emCalc(40) emCalc(160) emCalc(40);*/ }
   /***************************
-	| Services page			   |
-	/**************************/
+    | Services page            |
+    /**************************/
   .services a.logo {
     width: 80%;
     text-align: left; }
@@ -892,42 +890,41 @@ footer nav {
     padding-left: 2.5em;
     margin-top: -61px; }
   /***************************
-	| Contact page			   |
-	/**************************/
+    | Contact page             |
+    /**************************/
   .contact a.logo {
     width: 380px;
     height: 380px;
     margin: 0 auto;
-    background: url(../images/site/uandi-digital-andymeek.png) no-repeat;
+    background: url(/assets/images//site/uandi-digital-andymeek.png) no-repeat;
     background-size: contain; } }
 
 /* End medium media query */
 /* Used to alter styles for large sized screens. */
-@media ('only screen and (min-width:"61em")') {
+@media only screen and (min-width: 61em) {
   a.logo,
   .container {
     float: left; }
   a.logo {
     background-size: 150px 150px;
     background-position: right top;
-    /*background:red;*/
-    top: 6.5625em; }
+    top: 6.5625em;
+    position: relative; }
   .container {
-    /*background:yellow;*/
     top: 7.5em;
     padding-left: 2.5em; }
   /**************************
-	| Home page				  |
-	/*************************/
+    | Home page               |
+    /*************************/
   .home a.logo {
     width: 40%;
     height: 331px;
-    background: url(../images/site/uandi-digital-331px-331px.png) no-repeat right; }
+    background: url(/assets/images//site/uandi-digital-331px-331px.png) no-repeat right; }
   .home .container {
     width: 60%; }
   /***************************
-	| Services page			   |
-	/**************************/
+    | Services page            |
+    /**************************/
   .services a.logo,
   .contact a.logo {
     width: 30%; }
@@ -935,8 +932,8 @@ footer nav {
   .contact .container {
     width: 70%; }
   /***************************
-	| Contact page			   |
-	/**************************/
+    | Contact page             |
+    /**************************/
   .contact a.logo {
     background-position: right top;
     background-size: 280px; } }

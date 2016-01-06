@@ -6,14 +6,19 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
 		browserify: {
 			build: {
 				options: {
 					debug: true,
-					transform: ['reactify']
+					transform: [
+						["babelify", {
+							stage: 0
+						}]
+					]
 				},
 				files: {
-                    'public/assets/js/main.js': 'app/assets/js/main.js'
+					'public/assets/js/main.js': 'app/assets/js/main.js'
 				}
 			}
 		},
