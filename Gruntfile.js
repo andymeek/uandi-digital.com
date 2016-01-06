@@ -6,20 +6,17 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-
 		browserify: {
-			build: {
+			dist: {
 				options: {
-					debug: true,
 					transform: [
-						["babelify", {
-							stage: 0
+						['babelify', {
+							presets: ['es2015', 'react']
 						}]
 					]
 				},
-				files: {
-					'public/assets/js/main.js': 'app/assets/js/main.js'
-				}
+				src: ['app/assets/js/main.js'],
+				dest: 'public/assets/js/main.js'
 			}
 		},
 		uglify: {
@@ -65,7 +62,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('js', ['browserify:build']);
+	grunt.registerTask('js', ['browserify']);
 	grunt.registerTask('css', ['sass']);
 	grunt.registerTask('dist', ['js', 'uglify', 'css', 'cssmin']);
 	grunt.registerTask('default', ['js', 'css']);

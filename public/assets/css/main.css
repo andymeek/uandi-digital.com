@@ -667,6 +667,7 @@ header {
 
 .bottom-background {
   position: fixed;
+  z-index: 1;
   bottom: 0;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -756,13 +757,16 @@ footer nav {
       font-size: 0.5rem; }
       footer nav ul li a {
         display: block;
+        width: 100%;
         color: #fff;
-        padding: 1.25em 0.3125em 1.25em 0.3125em; }
-        footer nav ul li a:hover {
-          color: #F4574E; }
-      footer nav ul li [class^="icon-"]:before,
-      footer nav ul li [class*=" icon-"]:before {
-        font-size: 30px; }
+        line-height: 72px; }
+        footer nav ul li a:before {
+          font-size: 30px;
+          width: 30px;
+          height: 30px;
+          top: 20px;
+          position: absolute;
+          margin-left: -30px; }
 
 /* Active nav links */
 .home footer nav ul li a.icon-about {
@@ -859,16 +863,13 @@ footer nav {
   .container {
     max-width: 80%; }
   /* Footer */
-  footer nav ul li {
-    font-size: 16px;
-    font-size: 1rem; }
-    footer nav ul li a:before,
-    footer nav ul li a span {
-      display: inline-block; }
-    footer nav ul li a span {
-      position: relative;
-      top: -7px;
-      margin: 0 0 0 0.625em; }
+  footer nav {
+    height: 72px; }
+    footer nav ul li {
+      font-size: 16px;
+      font-size: 1rem; }
+      footer nav ul li a span {
+        margin: 0 0 0 0.625em; }
   /**************************
     | Home page               |
     /*************************/

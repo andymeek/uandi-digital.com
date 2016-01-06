@@ -65,8 +65,11 @@ module.exports = function (app) {
 
     //Route not found -- Set 404
     app.get('*', function (req, res) {
-        res.json({
-            route: 'Sorry this page does not exist!'
+        oConfig.pageTitle = '404 - Page not found- U&amp;i Digital';
+        oConfig.bodyClass = 'home';
+
+        res.render('pages/404.ejs', {
+            config: oConfig
         });
     });
 

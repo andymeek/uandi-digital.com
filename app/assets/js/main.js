@@ -1,7 +1,17 @@
-/** @jsx React.DOM */
-/*global document*/
-var React = require('react/addons'),
-	ReactApp = require('../../components/ReactApp'),
-	mountNode = document.getElementById('react-main-mount');
+/*global $ document */
+'use strict';
+var React = require('react'),
+	ReactDOM = require('react-dom'),
+	aRecentBuildsData = require('../../data/recentBuilds.js'),
+	RecentBuilds = require('../../components/RecentBuilds.jsx'),
+	oMountNode = null;
 
-React.render(new ReactApp({}), mountNode);
+$(function () {
+	oMountNode = document.getElementById('builds-container');
+	if (oMountNode !== null) {
+		ReactDOM.render(React.createElement(RecentBuilds, {
+			companies: aRecentBuildsData
+		}), oMountNode);
+
+	}
+});

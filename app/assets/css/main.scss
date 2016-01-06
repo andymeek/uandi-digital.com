@@ -118,6 +118,7 @@ header {
 
 .bottom-background {
     position: fixed;
+    z-index: 1;
     bottom: 0;
     @include rotate(180);
     background-position: bottom;
@@ -222,15 +223,17 @@ footer {
                 @include font-size(8);
                 a {
                     display: block;
+                    width: 100%;
                     color: #fff;
-                    padding: emCalc(20) emCalc(5) emCalc(20) emCalc(5);
-                    &:hover {
-                        color:#{$colour-nav-active};
+                    line-height: 72px;
+                    &:before {
+                        font-size: 30px;
+                        width: 30px;
+                        height: 30px;
+                        top: 20px;
+                        position: absolute;
+                        margin-left: -30px;
                     }
-                }
-                [class^="icon-"]:before,
-                [class*=" icon-"]:before {
-                    font-size: 30px;
                 }
             }
         }
@@ -391,17 +394,12 @@ footer {
     /* Footer */
     footer {
         nav {
+            height: 72px;
             ul {
                 li {
                     @include font-size(16);
                     a {
-                        &:before,
                         span {
-                            display: inline-block;
-                        }
-                        span {
-                            position: relative;
-                            top: -7px;
                             margin: 0 0 0 emCalc(10);
                         }
                     }

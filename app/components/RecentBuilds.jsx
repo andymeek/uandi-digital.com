@@ -1,8 +1,6 @@
-/** @jsx React.DOM */
-
 var React = require('react'),
     RecentBuilds,
-    Project;
+    Company;
 
 RecentBuilds = React.createClass({
     render: function () {
