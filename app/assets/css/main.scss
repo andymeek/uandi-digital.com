@@ -168,16 +168,9 @@ a.logo {
     }
 }
 
-
-/***************************
-| Home page                |
-/**************************/
-
-.home {
-    h3 {
-        margin-top: emCalc(40);
-        @include font-size(16);
-    }
+.get-in-touch {
+    margin-top: emCalc(40);
+    @include font-size(16);
 }
 
 

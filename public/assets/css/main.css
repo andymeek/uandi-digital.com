@@ -715,10 +715,7 @@ a.logo {
       content: "• ";
       color: #50C0BB; }
 
-/***************************
-| Home page                |
-/**************************/
-.home h3 {
+.get-in-touch {
   margin-top: 2.5em;
   font-size: 16px;
   font-size: 1rem; }
