@@ -15,14 +15,19 @@ module.exports = function (grunt) {
 						}]
 					]
 				},
-				src: ['app/assets/js/main.js'],
+				src: ['app/assets/js/jquery.min.js', 'app/assets/js/main.js'],
 				dest: 'public/assets/js/main.js'
 			}
 		},
 		uglify: {
+			options: {
+				mangle: {
+					except: ['jQuery']
+				}
+			},
 			my_target: {
 				files: {
-					'public/assets/js/main-min.js': ['app/assets/js/main.js']
+					'public/assets/js/main-min.js': ['public/assets/js/main.js']
 				}
 			}
 		},
