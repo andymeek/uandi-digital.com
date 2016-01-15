@@ -3,10 +3,8 @@
 
 var oUtils = {};
 
-oUtils.env = {};
-
-oUtils.env.isDev = function () {
-	return __dirname === '/Users/andrewmeek/node/www/uandi-digital' ? true : false;
-}
+oUtils.isDev = function isDev() {
+	return __dirname === '/Users/andrewmeek/node/www/uandi-digital/app' ? true : false;
+};
 
 exports.utils = oUtils;

@@ -21,4 +21,8 @@ var _gaq = [
     s.parentNode.insertBefore(g, s)
 }(document, 'script'));
 </script>
-<script src="assets/js/main-min.js"></script>
+<% if (config.isDevEnv) { %>
+    <script src="assets/js/main.js"></script>
+    <% } else { %>
+        <script src="assets/js/main-min.js"></script>
+        <% } %>

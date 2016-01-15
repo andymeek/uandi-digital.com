@@ -2,12 +2,25 @@ var express = require('express'),
 	path = require('path'),
 	compress = require('compression'),
 	app = express(),
-	port = __dirname === '/Users/andrewmeek/node/www/uandi-digital' ? 4444 : 80;
+	utils = require('./app/utils').utils,
+	port = utils.isDev() ? 4444 : 80;
 
 // Make sure to include the JSX transpiler
 require('node-jsx').install();
 // G-Zip the response
 app.use(compress());
+
+function wwwRedirect(req, res, next) {
+	'use strict';
+	if (req.headers.host.slice(0, 4) === 'www.') {
+		var newHost = req.headers.host.slice(4);
+		return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+	}
+	next();
+}
+app.set('trust proxy', true);
+app.use(wwwRedirect);
+
 // Include static assets. Not advised for production
 app.use(express.static(path.join(__dirname, 'public')));
 // Set view path
@@ -20,5 +33,3 @@ require('./app/routes/core-routes.js')(app);
 
 app.listen(port);
 console.log('Server is Up and Running at Port : ' + port);
-
-console.log(process.env);

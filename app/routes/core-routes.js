@@ -3,13 +3,17 @@
 
 var React = require('react'),
     ReactDOMServer = require('react-dom/server'),
-    oConfig = require('../config');
+    oConfig = require('../config'),
+    utils = require('../utils').utils;
+
+oConfig.isDevEnv = utils.isDev();
 
 module.exports = function (app) {
 
     app.get('/', function (req, res) {
-        oConfig.pageTitle = 'Andy Meek - Freelance Front End Developer | Mobile, tablet &amp; web developer - Sydney - U&amp;i Digital';
+        oConfig.pageTitle = 'Andy Meek - Front End Developer | Mobile, tablet &amp; web developer - Sydney - U&amp;i Digital';
         oConfig.bodyClass = 'home';
+        oConfig.pageDescription = 'U&amp;i Digital is the company of Andy Meek - a UI/Front-End developer &amp; Consultant based in Sydney, Australia.';
 
         res.render('pages/index.ejs', {
             config: oConfig
@@ -19,6 +23,7 @@ module.exports = function (app) {
     app.get('/services', function (req, res) {
         oConfig.pageTitle = 'UI/UX Development Services - U&amp;i Digital';
         oConfig.bodyClass = 'services';
+        oConfig.pageDescription = 'U&amp;i Digital creates multi-channel, cross-device, cross-platform websites &amp; web apps using the latest technologies &amp; methodologies.';
 
         res.render('pages/services.ejs', {
             config: oConfig
@@ -34,6 +39,7 @@ module.exports = function (app) {
 
         oConfig.pageTitle = 'Recent builds - U&amp;i Digital';
         oConfig.bodyClass = 'recent-builds';
+        oConfig.pageDescription = 'U&amp;i Digital\'s portfolio.';
 
         res.render('pages/recent-builds.ejs', {
             reactOutput: reactHtml,
@@ -44,6 +50,7 @@ module.exports = function (app) {
     app.get('/contact', function (req, res) {
         oConfig.pageTitle = 'Contact Andy Meek - U&amp;i Digital';
         oConfig.bodyClass = 'contact';
+        oConfig.pageDescription = 'Contact Andy Meek, the director of U&amp;i Digital via or email or filling in the brief form.';
 
         res.render('pages/contact.ejs', {
             config: oConfig
