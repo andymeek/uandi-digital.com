@@ -897,8 +897,8 @@ footer nav {
     | Contact page             |
     /**************************/
   .contact a.logo {
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 366px;
     margin: 0 auto;
     background: url(/assets/images//site/uandi-digital-andymeek.png) no-repeat;
     background-size: contain; } }

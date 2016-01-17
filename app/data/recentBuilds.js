@@ -1,13 +1,18 @@
 var recentBuilds = [{
-    id: 8,
+    id: 9,
     name: 'Tesco Direct',
     uri: 'http://www.tesco.com/direct',
     logo: '/assets/images/recent-builds/tesco-direct/tesco-direct-logo.gif'
 }, {
-    id: 7,
+    id: 8,
     name: 'River Island',
     uri: 'http://www.river-island.com',
     logo: '/assets/images/recent-builds/river-island/river-island-logo.gif'
+}, {
+    id: 7,
+    name: 'French Connection',
+    uri: 'http://www.french-connection.com',
+    logo: '/assets/images/recent-builds/french-connection/french-connection-logo.gif'
 }, {
     id: 6,
     name: 'Mitsui Sumitomo Insurance Europe',
