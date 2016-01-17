@@ -760,10 +760,7 @@ footer nav {
         footer nav ul li a:before {
           font-size: 30px;
           width: 30px;
-          height: 30px;
-          top: 20px;
-          position: absolute;
-          margin-left: -30px; }
+          height: 30px; }
 
 /* Active nav links */
 .home footer nav ul li a.icon-about {
@@ -812,9 +809,14 @@ footer nav {
   footer nav ul li {
     font-size: 8px;
     font-size: 0.5rem; }
-    footer nav ul li a span {
-      margin-top: 0.3125em;
-      display: block; }
+    footer nav ul li a {
+      line-height: 22px; }
+      footer nav ul li a span {
+        margin-top: 0.3125em;
+        display: block; }
+      footer nav ul li a:before {
+        top: 10px;
+        position: relative; }
   /***************************
     | Services page            |
     /**************************/
@@ -867,6 +869,10 @@ footer nav {
       font-size: 1rem; }
       footer nav ul li a span {
         margin: 0 0 0 0.625em; }
+      footer nav ul li a:before {
+        top: 20px;
+        position: absolute;
+        margin-left: -30px; }
   /**************************
     | Home page               |
     /*************************/

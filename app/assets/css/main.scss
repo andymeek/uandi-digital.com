@@ -223,9 +223,6 @@ footer {
                         font-size: 30px;
                         width: 30px;
                         height: 30px;
-                        top: 20px;
-                        position: absolute;
-                        margin-left: -30px;
                     }
                 }
             }
@@ -305,9 +302,14 @@ footer {
                 li {
                     @include font-size(8);
                     a {
+                        line-height: 22px;
                         span {
                             margin-top: emCalc(5);
                             display: block;
+                        }
+                        &:before {
+                            top: 10px;
+                            position: relative;
                         }
                     }
                 }
@@ -394,6 +396,11 @@ footer {
                     a {
                         span {
                             margin: 0 0 0 emCalc(10);
+                        }
+                        &:before {
+                            top: 20px;
+                            position: absolute;
+                            margin-left: -30px;
                         }
                     }
                 }
