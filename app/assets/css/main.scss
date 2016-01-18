@@ -265,7 +265,7 @@ footer {
     display: inline-block;
     a {
         @include font-size(45);
-        margin-right: emCalc(10);
+        margin-right: 15px;
         &.icon-github {
             margin-right: 0;
         }
