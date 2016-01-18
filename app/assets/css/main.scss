@@ -124,7 +124,7 @@ header {
     background-position: bottom;
 }
 
-a.logo {
+.logo {
     background:url(#{$core-image-path}/site/uandi-digital-200px-200px.png) no-repeat;
     z-index: 2;
     display: block;
@@ -234,26 +234,34 @@ footer {
 /* Active nav links */
 
 .home {
-    footer nav ul li a.icon-about {
-        color:#{$colour-nav-active};
+    footer {
+        .icon-about {
+            color:#{$colour-nav-active};
+        }
     }
 }
 
 .services {
-    footer nav ul li a.icon-monitor {
-        color:#{$colour-nav-active};
+    footer {
+        .icon-monitor {
+            color:#{$colour-nav-active};
+        }
     }
 }
 
 .recent-builds {
-    footer nav ul li a.icon-spanner {
-        color:#{$colour-nav-active};
+    footer {
+        .icon-spanner {
+            color:#{$colour-nav-active};
+        }
     }
 }
 
 .contact {
-    footer nav ul li a.icon-contact {
-        color:#{$colour-nav-active};
+    footer {
+        .icon-contact {
+            color:#{$colour-nav-active};
+        }
     }
 }
 
@@ -265,7 +273,7 @@ footer {
     display: inline-block;
     a {
         @include font-size(45);
-        margin-right: 15px;
+        margin-right: 20px;
         &.icon-github {
             margin-right: 0;
         }
@@ -286,7 +294,7 @@ footer {
     h2 {
         @include font-size(18);
     }
-    a.logo {
+    .logo {
         display: block;
         position: absolute;
         top: 1em;
@@ -345,9 +353,14 @@ footer {
     | Contact page             |
     /**************************/
     .contact {
-        a.logo {
+        .logo {
             background:url(#{$core-image-path}site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
             background-size: contain;
+        }
+    }
+    .social-icons-container {
+        a {
+            margin-right: 10px;
         }
     }
 }
@@ -359,7 +372,7 @@ footer {
 /* Used to alter styles for medium sized screens. */
 
 @media only screen and (min-width: $medium-screen) {
-    a.logo {
+    .logo {
         top: emCalc(65);
         width: 200px;
         height: 200px;
@@ -420,7 +433,7 @@ footer {
     | Services page            |
     /**************************/
     .services {
-        a.logo {
+        .logo {
             width: 80%;
             text-align: left;
         }
@@ -441,7 +454,7 @@ footer {
     | Contact page             |
     /**************************/
     .contact {
-        a.logo {
+        .logo {
             width: 350px;
             height: 366px;
             margin: 0 auto;
@@ -459,11 +472,11 @@ footer {
 /* Used to alter styles for large sized screens. */
 
 @media only screen and (min-width: $large-screen) {
-    a.logo,
+    .logo,
     .container {
         float: left;
     }
-    a.logo {
+    .logo {
         background-size: 150px 150px;
         background-position: right top;
         top: emCalc(105);
@@ -477,7 +490,7 @@ footer {
     | Home page               |
     /*************************/
     .home {
-        a.logo {
+        .logo {
             width: 40%;
             height: 331px;
             background:url(#{$core-image-path}/site/uandi-digital-331px-331px.png) no-repeat right;
@@ -502,7 +515,7 @@ footer {
     | Contact page             |
     /**************************/
     .contact {
-        a.logo {
+        .logo {
             background-position: right top;
             background-size: 280px;
         }

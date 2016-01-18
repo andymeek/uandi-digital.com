@@ -676,7 +676,7 @@ header {
   transform: rotate(180deg);
   background-position: bottom; }
 
-a.logo {
+.logo {
   background: url(/assets/images//site/uandi-digital-200px-200px.png) no-repeat;
   z-index: 2;
   display: block;
@@ -763,16 +763,16 @@ footer nav {
           height: 30px; }
 
 /* Active nav links */
-.home footer nav ul li a.icon-about {
+.home footer .icon-about {
   color: #F4574E; }
 
-.services footer nav ul li a.icon-monitor {
+.services footer .icon-monitor {
   color: #F4574E; }
 
-.recent-builds footer nav ul li a.icon-spanner {
+.recent-builds footer .icon-spanner {
   color: #F4574E; }
 
-.contact footer nav ul li a.icon-contact {
+.contact footer .icon-contact {
   color: #F4574E; }
 
 /* Social Icons */
@@ -782,7 +782,7 @@ footer nav {
   .social-icons-container a {
     font-size: 45px;
     font-size: 2.8125rem;
-    margin-right: 15px; }
+    margin-right: 20px; }
     .social-icons-container a.icon-github {
       margin-right: 0; }
 
@@ -797,7 +797,7 @@ footer nav {
   h2 {
     font-size: 18px;
     font-size: 1.125rem; }
-  a.logo {
+  .logo {
     display: block;
     position: absolute;
     top: 1em;
@@ -832,14 +832,16 @@ footer nav {
   /***************************
     | Contact page             |
     /**************************/
-  .contact a.logo {
+  .contact .logo {
     background: url(/assets/images/site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
-    background-size: contain; } }
+    background-size: contain; }
+  .social-icons-container a {
+    margin-right: 10px; } }
 
 /* End small media query */
 /* Used to alter styles for medium sized screens. */
 @media only screen and (min-width: 43.8125em) {
-  a.logo {
+  .logo {
     top: 4.0625em;
     width: 200px;
     height: 200px;
@@ -882,7 +884,7 @@ footer nav {
   /***************************
     | Services page            |
     /**************************/
-  .services a.logo {
+  .services .logo {
     width: 80%;
     text-align: left; }
   .services .container > section {
@@ -896,7 +898,7 @@ footer nav {
   /***************************
     | Contact page             |
     /**************************/
-  .contact a.logo {
+  .contact .logo {
     width: 350px;
     height: 366px;
     margin: 0 auto;
@@ -906,10 +908,10 @@ footer nav {
 /* End medium media query */
 /* Used to alter styles for large sized screens. */
 @media only screen and (min-width: 61em) {
-  a.logo,
+  .logo,
   .container {
     float: left; }
-  a.logo {
+  .logo {
     background-size: 150px 150px;
     background-position: right top;
     top: 6.5625em;
@@ -920,7 +922,7 @@ footer nav {
   /**************************
     | Home page               |
     /*************************/
-  .home a.logo {
+  .home .logo {
     width: 40%;
     height: 331px;
     background: url(/assets/images//site/uandi-digital-331px-331px.png) no-repeat right; }
@@ -938,7 +940,7 @@ footer nav {
   /***************************
     | Contact page             |
     /**************************/
-  .contact a.logo {
+  .contact .logo {
     background-position: right top;
     background-size: 280px; } }
 
