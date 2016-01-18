@@ -270,9 +270,9 @@ footer {
 
 .social-icons-container {
     font-family:#{$font-icon};
-    display: inline-block;
     a {
         @include font-size(45);
+        display: inline-block;
         margin-right: 20px;
         &.icon-github {
             margin-right: 0;

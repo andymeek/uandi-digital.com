@@ -777,11 +777,11 @@ footer nav {
 
 /* Social Icons */
 .social-icons-container {
-  font-family: uandi-digital;
-  display: inline-block; }
+  font-family: uandi-digital; }
   .social-icons-container a {
     font-size: 45px;
     font-size: 2.8125rem;
+    display: inline-block;
     margin-right: 20px; }
     .social-icons-container a.icon-github {
       margin-right: 0; }
