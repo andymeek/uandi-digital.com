@@ -179,13 +179,14 @@ header {
 /**************************/
 
 .recent-builds {
-    .container {
-        #builds-container {
-            margin-top: emCalc(40);
-            a {
-                display: inline-block;
-                margin-right: emCalc(10);
-                &:hover img {
+    #builds-container {
+        max-width: emCalc(800);
+        margin-top: emCalc(40);
+        a {
+            display: inline-block;
+            margin: 0 emCalc(10) emCalc(7) 0;
+            &:hover {
+                img {
                     @include opacity(.7);
                 }
             }
@@ -420,15 +421,6 @@ footer {
             }
         }
     }
-    /**************************
-    | Home page               |
-    /*************************/
-    .home {
-        .container {
-            /*max-width:emCalc(640);
-            padding:0 emCalc(40) emCalc(160) emCalc(40);*/
-        }
-    }
     /***************************
     | Services page            |
     /**************************/
@@ -461,7 +453,6 @@ footer {
             background:url(#{$core-image-path}/site/uandi-digital-andymeek.png) no-repeat;
             background-size: contain;
         }
-        .container {}
     }
 }
 

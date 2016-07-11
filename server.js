@@ -1,9 +1,9 @@
 var express = require('express'),
-	path = require('path'),
-	compress = require('compression'),
-	app = express(),
-	utils = require('./app/utils').utils,
-	port = utils.isDev() ? 4444 : 80;
+    path = require('path'),
+    compress = require('compression'),
+    app = express(),
+    utils = require('./app/utils').utils,
+    port = utils.isDev() ? 4444 : 80;
 
 // Make sure to include the JSX transpiler
 require('node-jsx').install();
@@ -11,12 +11,12 @@ require('node-jsx').install();
 app.use(compress());
 
 function wwwRedirect(req, res, next) {
-	'use strict';
-	if (req.headers.host.slice(0, 4) === 'www.') {
-		var newHost = req.headers.host.slice(4);
-		return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
-	}
-	next();
+    'use strict';
+    if (req.headers.host.slice(0, 4) === 'www.') {
+        var newHost = req.headers.host.slice(4);
+        return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+    }
+    next();
 }
 app.set('trust proxy', true);
 app.use(wwwRedirect);
