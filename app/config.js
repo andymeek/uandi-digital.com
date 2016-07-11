@@ -1,6 +1,6 @@
 "use strict";
 
-let oConfig = {
+var oConfig = {
     COMPANY_NAME: 'U&amp;i Digital',
     CONTACT_EMAIL: 'hello@uandi-digital.com',
     TWITTER: 'http://twitter.com/andymeek',
