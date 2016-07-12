@@ -1,6 +1,6 @@
 "use strict";
 
-var express = require('express'),
+const express = require('express'),
     path = require('path'),
     compress = require('compression'),
     app = express(),
