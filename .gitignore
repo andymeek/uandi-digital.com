@@ -2,3 +2,9 @@ node_modules/
 npm-debug.log
 .DS_Store
 .sublime-grunt.cache
+public/assets/css/main-min.css
+public/assets/css/main-min.css.map
+public/assets/css/main.css
+public/assets/css/main.css.map
+public/assets/js/main-min.js
+public/assets/js/main.js

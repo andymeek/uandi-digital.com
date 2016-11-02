@@ -1,3 +1,5 @@
+'use strict';
+
 const recentBuilds = [
     {
         id: 10,
