@@ -11,7 +11,7 @@ oConfig.isDevEnv = utils.isDev();
 module.exports = function (app) {
 
     app.get('/', function (req, res) {
-        oConfig.conpageTitle = 'Andy Meek - Front End Developer | Mobile, tablet &amp; web developer - Sydney - U&amp;i Digital';
+        oConfig.pageTitle = 'Andy Meek - Full-Stack Developer | Mobile, tablet &amp; web - Sydney - U&amp;i Digital';
         oConfig.bodyClass = 'home';
         oConfig.pageDescription = 'U&amp;i Digital is the company of Andy Meek - a UI/Front-End developer &amp; Consultant based in Sydney, Australia.';
 

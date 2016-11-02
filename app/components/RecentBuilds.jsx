@@ -1,24 +1,12 @@
-'use strict';
-
 const React = require('react');
+const Company = require('./Company.jsx');
 
-class Company extends React.Component {
-    render() {
-        return (
-            <a href={this.props.uri} target={"_blank"}>
-                <img src={this.props.logo} alt={this.props.name} />
-            </a>
-        );
-    }
-}
-
-class RecentBuilds extends React.Component{ 
-    render() {
-        return (
-            <div>
-            {this.props.companies.map((company) => {
+const RecentBuilds = (props) => {
+    return (
+        <div>
+            {props.companies.map((company) => {
                 return (
-                    <Company 
+                    <Company
                         key={company.id}
                         name={company.name}
                         uri={company.uri}
@@ -26,9 +14,14 @@ class RecentBuilds extends React.Component{
                     />
                 );
             })}
-            </div>
-        );
-    }
-}
+        </div>
+    );
+};
+
+RecentBuilds.propTypes = {
+    name: React.PropTypes.string,
+    uri: React.PropTypes.string,
+    logo: React.PropTypes.string,
+};
 
 module.exports = RecentBuilds;

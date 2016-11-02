@@ -1,5 +1,3 @@
-"use strict";
-
 let oConfig = {
     COMPANY_NAME: 'U&amp;i Digital',
     CONTACT_EMAIL: 'hello@uandi-digital.com',
@@ -8,7 +6,7 @@ let oConfig = {
     GITHUB: 'http://www.github.com/andymeek',
     LINKEDIN: 'http://www.linkedin.com/profile/view?id=86256897',
 
-    pageTitle: '',
+    pageTitle: 'Andy Meek - Full-Stack Digital Developer &amp; Consultant',
     bodyClass: '',
     pageDescription: '',
 
