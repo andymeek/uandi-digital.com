@@ -10,12 +10,12 @@ Install:
 
 To run:
 
-    node server
+    npm start
 
 To build the assets:
 
-    grunt
+    npm run build
 
 To distribute the assets:
 
-    grunt dist
+    npm run dist

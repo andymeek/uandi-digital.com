@@ -1,14 +1,11 @@
-/*jslint node: true */
-'use strict';
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+const oConfig = require('../config').config;
+const utils = require('../utils').utils;
 
-var React = require('react'),
-    ReactDOMServer = require('react-dom/server'),
-    oConfig = require('../config').config,
-    utils = require('../utils').utils;
-
-oConfig.isDevEnv = utils.isDev();
-
-module.exports = function (app) {
+const routes = (app) => {
+    
+    oConfig.isDevEnv = utils.isDev();
 
     app.get('/', function (req, res) {
         oConfig.pageTitle = 'Andy Meek - Full-Stack Developer | Mobile, tablet &amp; web - Sydney - U&amp;i Digital';
@@ -79,5 +76,6 @@ module.exports = function (app) {
             config: oConfig
         });
     });
-
 };
+
+module.exports = routes;

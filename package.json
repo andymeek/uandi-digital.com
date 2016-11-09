@@ -2,6 +2,19 @@
   "name": "node-authentication",
   "main": "server.js",
   "version": "1.1.0",
+  "author": "@andymeek",
+  "engines" : {
+    "node" : ">=4.4.5" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andymeek/uandi-digital.com.git"
+  },
+  "scripts": {
+    "start": "node server",
+    "build": "grunt",
+    "dist": "grunt dist"
+  },
   "dependencies": {
     "compression": "^1.6.0",
     "ejs": "2.3.4",
