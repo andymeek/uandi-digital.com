@@ -9,15 +9,19 @@
   },
   "scripts": {
     "build": "yarn run lint && grunt",
+    "dev": "NODE_ENV=development node ./server",
     "dist": "grunt dist",
-    "lint": "./node_modules/.bin/eslint ./app",
-    "prettify": "./node_modules/.bin/eslint --fix ./app",
-    "start": "NODE_ENV=development node ./server"
+    "lint": "eslint ./app",
+    "prettify": "eslint --fix ./app",
+    "start": "NODE_ENV=production node ./server"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "dependencies": {
     "compression": "^1.6.0",
     "ejs": "^2.5.5",
-    "express": "~4.0.0",
+    "express": "^4.17.1",
     "path": "^0.12.7"
   },
   "devDependencies": {

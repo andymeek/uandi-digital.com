@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const compress = require('compression')
-const routes = require('./app/routes/core-routes')
+const routes = require('./app/routes/routes')
 
 const app = express()
 const port = process.env.NODE_ENV === 'production' ? 80 : 3000
@@ -10,7 +10,11 @@ const port = process.env.NODE_ENV === 'production' ? 80 : 3000
 app.use(compress())
 
 const wwwRedirect = (req, res, next) => {
-  const { headers: { host }, originalUrl, protocol } = req
+  const {
+    headers: { host },
+    originalUrl,
+    protocol
+  } = req
   if (host.slice(0, 4) === 'www.') {
     const newHost = host.slice(4)
     return res.redirect(301, protocol + '://' + newHost + originalUrl)

@@ -1,17 +1,29 @@
 <%- include('../includes/header') %>
-    <%- include('../includes/top') %>
-        <article class="container clearfix">
-            <%- include('../includes/arrows') %>
-                <h1>Andy Meek</h1>
-                <h2>Digital Developer &amp; Consultant</h2>
-                <p>Hi, I’m Andy, a Digital Developer &amp; Consultant based in Sydney, Australia.</p>
-                <p>I’ve been producing websites &amp; web applications for the best part of a decade; working in many sectors
-                    including publishing, media, fashion and finance – developing in a variety of front-end &amp; back-end
-                    technologies.
-                </p>
-                <p>Over the last few years, I've been specifically focusing on developing beautiful, robust user interfaces
-                    &amp; cross-platform experiences for mobile, tablet, desktop and TV.</p>
-                <%- include('../includes/get-in-touch') %>
-        </article>
-        <%- include('../includes/footer') %>
-            <%- include('../includes/bottom') %>
+<%- include('../includes/top') %>
+<article class="container clearfix">
+    <h1><%- config.COMPANY_NAME %></h1>
+    <h2>A Software Development &amp; Consultancy Services Company.</h2>
+    <h3>What we do...</h3>
+    <p>At Dynameek, we like to get things 'done'.&nbsp; We don’t aim for perfection, we take a artisan's approach to
+        continually improving results for you and delivering better technology outcomes for your business.</p>
+    <ul class="what-we-do">
+        <li>Application & API Development</li>
+        <li>Mobile Development</li>
+        <li>UX</li>
+        <li>Cloud Migration</li>
+    </ul>
+
+    <h3>Who we've worked with...</h3>
+    <div class="builds-container">
+        <ul>
+            <% recentBuilds.forEach(function(rb) { %>
+            <li><%- rb.name %></li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="email">
+        <p><a href="mailto:<%- config.CONTACT_EMAIL -%>"><%- config.CONTACT_EMAIL -%></a></p>
+    </div>
+</article>
+<%- include('../includes/footer') %>
+<%- include('../includes/bottom') %>
