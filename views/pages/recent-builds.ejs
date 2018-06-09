@@ -1,13 +1,19 @@
 <%- include('../includes/header') %>
-<%- include('../includes/top') %>
-<article class="container clearfix">
-    <%- include('../includes/arrows') %>
-    <h1>Recent builds</h1>
-    <section>
-        <p>Below is list of websites I have built...</p>
-        <div id="builds-container"><%- reactOutput %></div>
-        <%- include('../includes/get-in-touch') %>
-    </section>
-</article>
-<%- include('../includes/footer') %>
-<%- include('../includes/bottom') %>
+    <%- include('../includes/top') %>
+        <article class="container clearfix">
+            <%- include('../includes/arrows') %>
+                <h1>Recent builds</h1>
+                <section>
+                    <p>Below is list of websites I have built...</p>
+                    <div id="builds-container">
+                        <% recentBuilds.forEach(function(rb) { %>
+                            <a href="<%- rb.uri %>" target="_blank">
+                                <img src="<%- rb.logo %>" alt="<%- rb.name %>" />
+                            </a>
+                            <% }) %>
+                    </div>
+                    <%- include('../includes/get-in-touch') %>
+                </section>
+        </article>
+        <%- include('../includes/footer') %>
+            <%- include('../includes/bottom') %>

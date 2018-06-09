@@ -1,21 +1,33 @@
-uandi-digital.com Website
+# uandi-digital.com website readme
 
 Drop me and email here if you have any questions: hello@uandi-digital.com
 
-The idea of this project was to convert my old PHP based website into a NodeJS/React website, harnessing universal/isomorphic technology - i.e., sharing the React templates on both the front-end and the back-end.
+## Purpose
+
+The idea of this project was to convert my old PHP based website into a NodeJS/React website, harnessing universal rendering - i.e., sharing the React templates on both the front-end and the back-end.
+
+## Version 2.0.0
+
+- removes the unnecessary React dependency
+- uses Yarn
+- uses Prettier
 
 Install:
 
-    npm i
+    yarn
+
+To lint the JavaScript
+
+    yarn run lint
 
 To run:
 
-    npm start
+    yarn start
 
 To build the assets:
 
-    npm run build
+    yarn run build
 
 To distribute the assets:
 
-    npm run dist
+    yarn run dist

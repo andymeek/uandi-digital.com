@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/standard"
+  ],
+  "plugins": ["react", "prettier", "standard"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": true,
+        "semi": false
+      }
+    ],
+    "comma-dangle": [2],
+    "import/prefer-default-export": 0,
+    "arrow-body-style": [2, "as-needed"],
+    "jsx-a11y/href-no-hash": "off",
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/no-marquee": 0,
+    "class-methods-use-this": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-debugger": "off"
+  }
+}
