@@ -1,9 +1,3 @@
-@charset "UTF-8";
-/*
-// +--------------------------------------------------------------------------------------------------------+
-// | Main Styles                                                                                                                                                                                                                                                                                                                                                                        |
-// +--------------------------------------------------------------------------------------------------------+
-*/
 /*
 // +--------------------------------------------------------------------------------------------------------+  
 // | Core imports								 																																																																																		|
@@ -411,7 +405,6 @@
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
-  speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -423,7 +416,6 @@
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
-  speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -574,14 +566,13 @@
   box-sizing: border-box; }
 
 html {
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   html body {
     font-family: 'Montserrat', sans-serif;
     font-weight: "normal";
     font-size: 16px;
     color: #333; }
 
-/* Headings */
 h1,
 h2,
 h3,
@@ -593,7 +584,8 @@ h6 {
 h1 {
   font-size: 49px;
   font-size: 3.0625rem;
-  color: #50C0BB; }
+  color: #1B4240;
+  text-transform: uppercase; }
 
 h2 {
   font-size: 28px;
@@ -602,24 +594,23 @@ h2 {
   font-weight: normal; }
 
 h3 {
-  font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 22px;
+  font-size: 1.375rem;
+  color: #1B4240;
+  font-weight: normal; }
 
 h4 {
   font-size: 20px;
   font-size: 1.25rem; }
 
-/*General links*/
 a {
   text-decoration: none;
   color: #51BFBA; }
   a:hover {
     color: #F3574D; }
 
-/* Generic HR */
 hr {
   height: 0.0625em;
-  background: red;
   border: 0;
   width: 100%;
   margin: 1.25em 0;
@@ -633,7 +624,6 @@ hr {
   hr:after {
     clear: both; }
 
-/* Inline Quotes */
 q {
   quotes: '\201C' '\201D' '\2018' '\2019'; }
 
@@ -643,14 +633,15 @@ q:before {
 q:after {
   content: close-quote; }
 
-/* Lists ordered and unordered */
 ul,
 ol {
   margin: 0;
-  padding: 0;
-  list-style: none; }
+  padding: 0; }
 
-/* Header */
+li {
+  margin-left: 40px;
+  list-style-type: circle; }
+
 header,
 .bottom-background {
   width: 100%;
@@ -676,13 +667,8 @@ header {
   transform: rotate(180deg);
   background-position: bottom; }
 
-.logo {
-  background: url(/assets/images//site/uandi-digital-200px-200px.png) no-repeat;
-  z-index: 2;
-  display: block;
-  position: relative; }
-
 .container {
+  color: #1b4140;
   margin: 0 auto;
   position: relative;
   top: 100px;
@@ -697,44 +683,42 @@ header {
   .container:after {
     clear: both; }
   .container h1 {
+    margin-top: 1.25em;
     margin-bottom: 0.125em; }
   .container h2,
   .container h3 {
+    margin-top: 0.625em;
     margin-bottom: 0.625em; }
+  .container h3 {
+    margin-top: 1.5625em; }
   .container p,
   .container ul,
   .container ol {
     line-height: 1.5em; }
-  .container ol li {
-    margin-bottom: 0.625em; }
-    .container ol li ol {
-      margin: 0 0 0 1.25em; }
-      .container ol li ol li {
-        margin-top: 0.625em; }
-    .container ol li:before {
-      content: "• ";
-      color: #50C0BB; }
+  .container .what-we-do {
+    padding: 10px 0; }
+    .container .what-we-do span {
+      color: #88d4d1;
+      margin: 0 10px; }
+  .container .email {
+    margin-top: 2.5em;
+    font-size: 24px; }
 
-.get-in-touch {
-  margin-top: 2.5em;
-  font-size: 16px;
-  font-size: 1rem; }
-
-/***************************
-| Recent builds page       |
-/**************************/
-.recent-builds #builds-container {
-  max-width: 50em;
-  margin-top: 2.5em; }
-  .recent-builds #builds-container a {
+.builds-container {
+  margin-top: 1.25em; }
+  .builds-container img {
     display: inline-block;
-    margin: 0 0.625em 0.4375em 0; }
-    .recent-builds #builds-container a:hover img {
+    margin: 0 0.3125em; }
+    .builds-container img:hover {
       opacity: 0.7;
       filter: alpha(opacity=70); }
+  .builds-container img {
+    width: 120px; }
 
-/* Footer */
-footer nav {
+footer div {
+  display: flex;
+  justify-content: space-between;
+  color: white;
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -742,203 +726,28 @@ footer nav {
   opacity: 0.95;
   filter: alpha(opacity=95);
   background: #1B4240;
-  text-align: center;
-  text-align: left;
-  font-size: 0; }
-  footer nav ul {
-    text-align: center; }
-    footer nav ul li {
-      display: inline-block;
-      width: 25%;
-      overflow: hidden;
-      font-size: 8px;
-      font-size: 0.5rem; }
-      footer nav ul li a {
-        display: block;
-        width: 100%;
-        color: #fff;
-        line-height: 72px; }
-        footer nav ul li a:before {
-          font-size: 30px;
-          width: 30px;
-          height: 30px; }
+  padding: 10px 0.625em; }
+  footer div span {
+    font-size: 11px;
+    font-weight: normal; }
+  footer div a {
+    color: white; }
 
-/* Active nav links */
-.home footer .icon-about {
-  color: #F4574E; }
-
-.services footer .icon-monitor {
-  color: #F4574E; }
-
-.recent-builds footer .icon-spanner {
-  color: #F4574E; }
-
-.contact footer .icon-contact {
-  color: #F4574E; }
-
-/* Social Icons */
-.social-icons-container {
-  font-family: uandi-digital; }
-  .social-icons-container a {
-    font-size: 45px;
-    font-size: 2.8125rem;
-    display: inline-block;
-    margin-right: 20px; }
-    .social-icons-container a.icon-github {
-      margin-right: 0; }
-
-/* Max width */
 @media only screen and (max-width: 43.75em) {
-  /* Hides */
-  .arrows {
-    display: none; }
   h1 {
     font-size: 34px;
     font-size: 2.125rem; }
   h2 {
     font-size: 18px;
-    font-size: 1.125rem; }
-  .logo {
-    display: block;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    width: 100px;
-    height: 100px;
-    background-size: 100% 100%; }
-  /* Footer */
-  footer nav ul li {
-    font-size: 8px;
-    font-size: 0.5rem; }
-    footer nav ul li a {
-      line-height: 22px; }
-      footer nav ul li a span {
-        margin-top: 0.3125em;
-        display: block; }
-      footer nav ul li a:before {
-        top: 10px;
-        position: relative; }
-  /***************************
-    | Services page            |
-    /**************************/
-  .services .container aside section {
-    padding: 0.625em; }
-  /***************************
-    | Recent builds page        |
-    /**************************/
-  .recent-builds .container #builds-container {
-    text-align: center; }
-    .recent-builds .container #builds-container a {
-      margin-bottom: 0.625em; }
-  /***************************
-    | Contact page             |
-    /**************************/
-  .contact .logo {
-    background: url(/assets/images/site/uandi-digital-andymeek-200px-200px.png) top repeat-x;
-    background-size: contain; }
-  .social-icons-container a {
-    margin-right: 10px; } }
+    font-size: 1.125rem; } }
 
-/* End small media query */
-/* Used to alter styles for medium sized screens. */
-@media only screen and (min-width: 43.8125em) {
-  .logo {
-    top: 4.0625em;
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    margin: 0 auto; }
-  .arrows {
-    font-family: uandi-digital;
-    position: absolute;
-    font-size: 40px;
-    font-size: 2.5rem;
-    top: 3.4375em;
-    color: #50C1BC;
-    display: none; }
-    .arrows:hover {
-      color: #F3574D; }
-  .icon-left-arrow-1 {
-    left: -50px; }
-  .icon-right-arrow-1 {
-    right: -50px; }
-  .container {
-    max-width: 80%; }
-  /* Footer */
-  footer nav {
-    height: 72px; }
-    footer nav ul li {
-      font-size: 16px;
-      font-size: 1rem; }
-      footer nav ul li a span {
-        margin: 0 0 0 0.625em; }
-      footer nav ul li a:before {
-        top: 20px;
-        position: absolute;
-        margin-left: -30px; }
-  /***************************
-    | Services page            |
-    /**************************/
-  .services .logo {
-    width: 80%;
-    text-align: left; }
-  .services .container > section {
-    float: left;
-    width: 60%; }
-  .services .container aside {
-    float: right;
-    width: 40%;
-    padding-left: 2.5em;
-    margin-top: -61px; }
-  /***************************
-    | Contact page             |
-    /**************************/
-  .contact .logo {
-    width: 350px;
-    height: 366px;
-    margin: 0 auto;
-    background: url(/assets/images//site/uandi-digital-andymeek.png) no-repeat;
-    background-size: contain; } }
-
-/* End medium media query */
-/* Used to alter styles for large sized screens. */
 @media only screen and (min-width: 61em) {
-  .logo,
+  footer div {
+    padding: 10px 6.25em; }
   .container {
-    float: left; }
-  .logo {
-    background-size: 150px 150px;
-    background-position: right top;
-    top: 6.5625em;
-    position: relative; }
-  .container {
+    float: left;
     top: 7.5em;
-    padding-left: 2.5em; }
-  /**************************
-    | Home page               |
-    /*************************/
-  .home .logo {
-    width: 40%;
-    height: 331px;
-    background: url(/assets/images//site/uandi-digital-331px-331px.png) no-repeat right; }
-  .home .container {
-    width: 60%; }
-  /***************************
-    | Services page            |
-    /**************************/
-  .services a.logo,
-  .contact a.logo {
-    width: 30%; }
-  .services .container,
-  .contact .container {
-    width: 70%; }
-  /***************************
-    | Contact page             |
-    /**************************/
-  .contact .logo {
-    background-position: right top;
-    background-size: 280px; } }
-
-/* End large media query */
+    padding-left: 6.25em;
+    max-width: 70%; } }
 
 /*# sourceMappingURL=main.css.map */
